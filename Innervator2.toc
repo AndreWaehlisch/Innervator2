@@ -1,0 +1,23 @@
+## Interface: 50400
+
+## Title: Innervator2
+
+## Version: 1.20
+
+## Notes: Reminds you to use your |cff5555FFInnervate|r early in combat.
+
+## Notes-deDE: Dieses Addon erinnert dich daran, |cff5555FFAnregen|r möglichst früh im Kampf zu benutzen.
+
+## Author: |cffFF7D0AHoochie|r @EU-Dethecus
+
+## SavedVariablesPerCharacter: Innervator2Config, Innervator2Target, Innervator2InputMacroText
+
+Libs\LibStub\LibStub.lua
+Libs\LibItemStatsPlus\lib.xml
+
+localization.enUS.lua
+localization.deDE.lua
+
+Innervator2GUI.lua
+Innervator2SavedVars.lua
+Innervator2Core.lua

@@ -1,0 +1,139 @@
+== <<size 220%>><<color #FF7D0A>>__Innervator2__<</color>><</size>>
+
+With the release of the patch 6.0.2 (15.10.2014) the Innervate spell was removed and development of this addon was closed down.
+
+=== This addon reminds you to use your Innervate early in a fight with a text message and a little sound.
+
+You can set your innervate target freely to any other player and the addon will check that players mana instead of yours. Innervator2 can warn you when you are too far away from that player then.
+
+This addon was build after the old (no longer maintained) Innervator by Nebelmond/vancleef: http://wow.curseforge.com/addons/ivtr/
+
+The addon will load up only when you have learned the innervate spell, i.e. you are a druid at the appropriate level. The "innervate warning" will only fire when:
+
+# your innervate target is in combat and alive (and so are you)
+# your innervate wont push the innervate target to or "above" 100% mana (we dont want to waste anything)
+# innervate is not on cooldown
+# last warning was more than 10s ago
+# (when innervate target is yourself, **and** you are moonkin: for the calculations your max mana pool is reduced by 2 eclipse procs, so that the warning does not come to early (only when not setup to warn by threshold))
+
+==== Innervator2 also can remind you to use your **mana potion** at a specific mana threshold.
+Type <<color #ABD473>>/i2 opt<</color>> and go to the "Mana Potion" panel to change the settings for this. When enabled the warning will only fire when:
+
+# you have a ready to use mana potion ([[http://www.wowhead.com/item=76094|Alchemist's Rejuvenation]], [[http://wowhead.com/item=76098|Master Mana Potion]], [[http://www.wowhead.com/item=57192|Mythical Mana Potion]], [[http://www.wowhead.com/item=57099|Mysterious Potion]] or [[http://www.wowhead.com/item=57194|Potion of Concentration]])
+# you are in combat
+# innervate is on cooldown
+# last warning was more than 10s ago
+# your mana is below the threshold you did setup
+
+
+
+----
+
+
+
+== <<size 150%>><<color #0070DE>>__Graphical User Interface (GUI)__<</color>><</size>>
+
+There is a GUI to configure all stuff for this addon. Type <<color #ABD473>>/i2 opt<</color>> for that.
+
+A little guide for the GUI:
+
+=== __<<color #69CCF0>>Main<</color>> Panel__
+
+; Enable Addon
+: You can disable the addon temporarily. When disabled warnings will not fire. Status can be changed in combat. (Slash command: <<color #ABD473>>/i2 on<</color>> and <<color #ABD473>>/i2 off<</color>>)
+
+;Set new Innervate target
+:Type the name of a member of your party or raid and click "Ok". The addon will remind you to use your innervate when the specified player needs it. (Slash command: <<color #ABD473>>/i2 set xxx<</color>>, where <<color #ABD473>>xxx<</color>> is the name of the player.)
+
+;Respec (Enable when specing Feral/Moonkin/Resto)
+:When changing between talent specs (Dual Talent Specialization) the addon can automatically send a <<color #ABD473>>/i2 off<</color>> or <<color #ABD473>>/i2 on<</color>> command.
+
+;Login (Enable when logging in as Feral/Moonkin/Resto)
+:Same as above, will enable/disable the addon when you log into WoW (and on UI reload) based on your spec.
+
+;Warning by threshold
+:You can either enable this or "Earliest warning possible". When enabled the innervate warning is fired based on a fixed mana percentage threshold.
+
+;Earliest warning possible
+:You can either enable this or "Warning by threshold". When enabled the innervate warning is fired as early as possible, i.e. you wont waste any mana. It takes into account whether the innervate target is you or a different player (glyph of innervate is taken into account, too).
+
+=== __<<color #69CCF0>>Warning1<</color>> Panel__
+
+;Sound
+:The warnings all come with a little sound. You can enable/disable them here. You can select a default sound with the "!" button. The sounds are played with the Master channel, for more informations on this visit [[http://www.wowpedia.org/API_PlaySoundFile|wowpedia]]. (Slash command: <<color #ABD473>>/i2 sound on<</color>> and <<color #ABD473>>/i2 sound off<</color>>)
+
+;Warning Sound
+:The sound played when you should innervate the innervate target.
+
+;OutOfRange sound
+:The sound played when you should innervate the innervate target but are out of range to do so.
+
+=== __<<color #69CCF0>>Warning2<</color>> Panel__
+
+;Frameflash
+:When enabled the edges of the screen will flash when a warning is fired. See the default screenshot of this addon on curse for an example. To change the color of the flash click on the "!" button and pick a color.
+
+;Output Chatframe
+:The chat frame to which the (text) warnings will be posted to. The messages will look like this: "Innervator2: Use your Innervate on xxx". The "Default Chatframe" is the chat frame where your general and trade channels should be. The "Error Frame" is a frame in the upper middle of the screen. You can also select "DBM Frame" which is in the middle of the screen, too. But it has a better looking font.
+
+;Icon
+:You can select an icon so that the (text) warnings are more visible.
+
+;Line count
+:You can configure how many lines should be printed per warning: Single (1), double (2) or triple (3). More lines can increase awareness for the warning but can also overwrite other informations in the chat frame.
+
+=== __<<color #69CCF0>>Macro<</color>> Panel__
+
+This is only for advanced users.
+
+;Macro code
+:The addon can provide a macro for the user which is updated everytime the innervate target is changed. The default macro code is the following:
+
+<<quote>>
+{{{#}}}showtooltip LocalizedInnervate\\
+/cast [button:1, nomod] LocalizedInnervate\\
+/cast [button:2, @/i2, nomod] LocalizedInnervate\\
+/cast [mod:alt,button:1, @player] LocalizedInnervate\\
+/cast [mod:alt,button:2, @player] LocalizedInnervate
+<</quote>>
+
+The default macro code will do the following: Cast innervate on the current target (not innervate target but the actual target) when the macro is leftclicked (without any modifier). Cast innervate on your innervate target when the macro is rightclicked (without modifier). Cast innervate on yourself when the macro is clicked while holding alt. The placeholder <<color #FF0000>>/i2<</color>> in the macro will always be replaced with your current innervate target.
+
+;Edit/Save macro
+:To edit the code for the macro hit the "Edit" button. A new macro named "I2InputMacroText" is created. Edit this macro using the <<color #FF0000>>/i2<</color>> placeholder. Then go to the <<color #69CCF0>>Macro<</color>> Panel (in the GUI) again and hit the "Save" button. Now click the "Hyperlink" button and drag and drop your new macro to your actionbar.
+
+=== __<<color #69CCF0>>Mana Potion<</color>> Panel__
+
+;Enable ManaPot
+:The addon can remind you to use a mana potion in a fight. It will warn you based on a mana percentage threshold. You can select a warning sound for the mana potion warning, too. This only works when you have one of those mana potions ready to use in your bag: Potion of Concentration, Mysterious Potion or Mythical Mana Potion.
+
+
+
+----
+
+
+
+== <<size 150%>><<color #0070DE>>__Slash Commands__<</color>><</size>>
+
+=== Innervator2 has some slash commands besides the GUI. You can list all commands with "/i2 help".
+
+Following is a list of slash commands, their needed arguments and what they do. Arguments come directly behind the command, separated with a space.
+
+All commands can be executed with "/i2" or "/innervator2", so "/i2 print" would produce the same as "/innervator2 print".
+
+|=Command|=Synonym|=Arguments|=Function|
+|off|disable|-none-|Disables the addon temporary, so no warnings are fired. Can be used in combat.|
+|on|enable|-none-|Enables the addon after it was disabled with "/i2 off".|
+|set|-none-|name of the new innervate target|Set a new innervate target. Use "/i2 set target" to set it to your current target.|
+|print|show, target|-none-|Adds a message with the current innervate target to your chat frame.|
+|who|test|-none-|Sends a /who query with the current innervate target to the server (for a spelling check).|
+|?|help|-none-|Prints the (localized) help with the most important slash commands.|
+|option|opt, options|-none-|Opens the GUI.|
+|sound|sounds|-none-|Toggles playing of sounds. Sounds are played when you should use your innervate or are to far away from your innervate target and should use it.|
+
+A slash command with one argument would be typed like this: "/i2 command argument1".
+
+==== __ToDo:__
+
+* Translations: If you want to see this addon in your language you can help [[http://wow.curseforge.com/addons/innervator2/localization/|translate]] it. If you have any questions chat me up at [[http://www.curse.com/private-messages/send?recipient=Jitter88|Curse]].
+* Found a bug or have an idea for a new feature? Open a [[http://code.google.com/p/jitter-ticket-collection/|ticket]]. Because Curse refuses to send me notifications on new comments I had to disable comments.

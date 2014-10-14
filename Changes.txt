@@ -1,0 +1,245 @@
+Version 1.20
+		* added new upgrade IDs
+		* added 'Visions of Insanity' buff
+
+Version 1.19
+		* added new item levels of spirit increase trinkets
+
+Version 1.18
+		* fixed a possible nil error on login
+
+Version 1.17
+		* recheck spirit on gear after reforge
+		* added support for percentage spirit increase trinkets
+		* increased refreshing rate of tooltip
+		* rounding instead of flooring in tooltip
+
+Version 1.16
+		* fixed glyph detection
+
+Version 1.15
+		* further performance improvement
+
+Version 1.14
+		* fixed buff detection for spirit increases
+
+Version 1.13
+		* fixed performance issue
+
+Version 1.12
+		* fixed formular for mana gain
+
+Version 1.11
+		* Update for 5.4 - should fully support the new innervate mechanic
+		* new feature: expected mana gained is display in the innervate tooltip
+
+Version 1.10
+		* updated TOC to 5.3
+
+Version 1.9
+		* updated TOC to 5.2
+
+Version 1.8
+		* minor bug fix
+		* replaced FrameFlash function, because it is said to cause taint
+
+Version 1.7
+		* updated TOC to 5.1
+
+Version 1.6
+		* fixed bug in gui
+
+Version 1.5
+		* using "/i2 set target" will set yourself as your Innervate target if no target selected now
+		* minor tweaks
+		* cleaned up usage of global variables in core
+
+Version 1.4
+		* fixed macro bug when macro window was never opened
+		* minor code cleanup
+
+Version 1.3
+		* fixed typo resulting in bug with talent check
+		* using "/i2 set target" will set your current target as Innervate target now
+		* removed some spammy addon messages
+		* some minor fixes and code cleanups
+
+Version 1.2
+		* fixed bug when zone check not enabled
+
+Version 1.1
+		* fixed severe bug with saved vars
+
+Version 1.0
+		* Attention: Installing the new version 1.0 of Innervator2 will reset all of your configurations!
+		* Update for Mists of Pandaria (MoP), respectively patch 5.0.4
+		* Mana check with "Earliest warning possible" enabled should work properly with all changes made in MoP. Also implemented routine for "Glyph of Innervate".
+		* Removed int procs (int does not increase mana anymore). Only kept Hymn of Hope as "mana proc".
+		* Added new spec (Guardian).
+		* Added new mana potions for mana potion warning.
+		* Addon can be enabled/disabled based on spec and location now.
+		* Fixed saving of icon.
+		* Many minor code cleanups and fixes.
+
+Version 0.3.3
+		* Fixed "Save" and "Test" button for frameflash. Did not accept new colors until UIreload.
+		* Minor code cleanup.
+
+Version 0.3.2
+		* Added option to configure how many lines the warnings should have.
+		* Fixed minor bug with button tooltips.
+
+Version 0.3.1
+		* Bugfix: Default icon would not use localized icon name.
+		* Removed traces of old soundtest.
+		* Added max. value of macros (instead of a fixed value): MAX_ACCOUNT_MACROS.
+		* Several minor code cleanups.
+
+Version 0.3.0
+		* Several minor fixes and code cleanups.
+
+Version 0.2.9
+		* Readded German localisation for help buttons and fixed two (since an old version missing) German localized strings.
+		* Attempt to fix a minor but (sometimes) annoying issue: In some cases a warning could fire when you die.
+		* Several code cleanups.
+
+Version 0.2.8
+		* Readded working help buttons (only in English yet).
+
+Version 0.2.7
+		* Band aid fix for not working "help" buttons in GUI. Will add proper help in a later version.
+
+Version 0.2.6
+		* TOC update for 4.3
+		* Restored some code deleted in the prev. version.
+
+Version 0.2.5
+		* Complete documentation overhaul.
+		* Removed useless slash commands which did stuff you should deal with in the GUI. [/i2 help] was adjusted accordingly.
+		* Minor localization fix for non english/german clients.
+		* Minor random fixes and code cleanup.
+
+Version 0.2.4
+		* Some code clean up for better performance.
+
+Version 0.2.3
+		* You can now setup a seperate sound for the mana potion warning (in the mana potion panel of the GUI).
+		* Fixed minor issue for non-druid characters (for which the addon should be disabled).
+		* Minor localization fixes.
+
+Version 0.2.2
+		* Fixed bug where startup did not work when logging in for the first time with the addon (problem with a saved var) [ticket from 19 Sep 2011 by Aisenfaire].
+		* Innervate target is saved per character now.
+		* New feature: You can setup in which spec(s) you want the addon enabled when logging in now.
+
+Version 0.2.1
+		* Fixed bug where frameflash option (enabled/disabled) was not saved [ticket from 23 Aug 2011 by andyf].
+
+Version 0.2.0
+		* You can configure the color of the frame flash now. Type "/i2 opt" and go to the Warning2 panel to check it out.
+		* Fix for mana calculation when innervate target is not player self.
+		* Fixed intmultiplier and intproc saving.
+		* Minor layout and functionality fixes in the GUI (IntProcs panel, warning1 panel, macro panel and IntProcs panel).
+		* Minor string clarifications.
+		* Minor fix for when no saved vars were saved.
+
+Version 0.1.9
+		* Minor layout fix in the GUI (warning2 panel).
+		* Added Mysterious Potion and Potion of Concentration to the code of the mana potion check.
+
+Version 0.1.8
+		* Fixed a localization issue for non-engl. clients, which produced the "out of range" warning everytime (even when you were in range).
+		* Fixed two layout bugs for the german localization.
+
+Version 0.1.7
+	Main Changelog:
+		* Innervator2 can now remind you to use a mana potion. You can setup a threshold at which the warning should occur. Type "/i2 opt" and go to the "Mana Potion" panel to setup the threshold. More configuration for this within the next few updates.
+		* You can now select between 2 modi of when to get warned to use innervate: You can either let the addon decide when to warn you or you can setup a specific threshold.
+		* Revamped the int proc coding. It works with Spell IDs now (instead of the spell name). Proc list pruned because of this (a up-to-date standard list will be loaded).
+		* New button "Info" in the intproc GUI. Select a int proc from your list, then press "Info" and the addon will print a link to the spell.
+
+	Minor Changes and Bugfixes:
+		* Some string changes/fixes/clarifications.
+		* Fixed a typo in the Warning1 panel resulting in the Sound2 not displaying properly.
+		* Fixed the headers of the Warning1 panel.
+		* Fixed a minor bug in the Warning2 panel: The proper message was not displayed when saving a new output channel and channel was "default chatframe".
+		* Will display number of intprics not in the "/i2 print" command but instead in the "/i2 intprocs" command now.
+
+Version 0.1.6
+		* innervate warning and out of range warning contain the name of the innervate target now.
+		* fixed the positions of the help buttons in the GUI.
+		* fixed a typo in the disabling message when changing specs.
+		* fixed german localization for spec detection.
+		* fixed an erroneous message appearing on login.
+		* added two new int procs (fiery quintessence and mark of the firelord).
+
+Version 0.1.5
+		* TOC updated for 4.2
+		* changed mana gained through innervate because of spell change (5% if target is other player, 20% if target is player self).
+		* you can now setup in which spec you want the addon to enable/disable (type "/i2 opt" to check it out)
+
+Version 0.1.4
+		* updated some localization stuff
+		* fixed a typo in the code of the "out of range" warning
+		* more icons!
+
+Version 0.1.3
+		* fixed typo
+
+Version 0.1.2
+		* fixed two little typos resulting in two annoying bugs
+		* little correction with the calculation for "hymn of hope"
+
+Version 0.1.1
+		* fixed a bug in the GUI
+		* minor localization fixes
+		* encoding fix
+		* added the possibility to show an icon in the innervate warning
+		* added the possibility to show a frameflash with the innervate warning
+		* added the option to configure the innervate warning. you can now change: chatframe, sounds, icon. see the GUI for that (/i2 opt)
+
+Version 0.1.0
+		* fixed an issue with localization
+
+Version 0.0.9
+		* fixed a minor bug made with 0.0.8
+
+Version 0.0.8
+		* fixed an issue with encoding. special characters should work properly now.
+		* removed automacro option, the addon will create/edit the macro everytime the innervate target is changed by default
+		* will create macro after combat, when macro creation failed because player was in combat
+		* will take two eclipse procs into account when innervate target is player self and player is moonkin
+		* minor localization fixes
+		* made some information of the "/i2 help" command (hopefully) more clear
+
+Version 0.0.7
+		* now will fire warning only if player is in combat and alive, too (will only make a difference when innervate target is set to another player)
+		* fixed a typo which produced an error when no saved variables where already saved
+
+Version 0.0.6
+		* TOC updated for 4.1
+		* minor typo fixes
+		* renamed a savedvariable (IntProccs -> IntProcs) and renamed the respective slash command (it's [/i2 intprocs] now)
+		* re-corrected some German localization
+		* fixed a bug where saving a new macro code did not work
+		* added the most common int procs as standard: power torrent, volcanic destruction, pattern of light, lightweave, synapse springs, volcanic power and hymn of hope
+		* overhauled the localization handling, it's now split up in seperate .lua files (to keep core file small)
+		* added a GUI for the addon, can be accessed via the standard interface options menu (Esc -> Interface -> AddOns -> Innervator2) or via the new slash command [/i2 options]
+
+Version 0.0.5
+		* fixed a bug which prevented the addon to load up properly ["attempt to concatenate global" and "bad argument #1 to 'pairs'"]
+
+Version 0.0.4
+		* revamped the code which decides when to fire innervate warning, should be more accurate now
+
+Version 0.0.3
+		* when printing innervate target: will print number of int proccs now too
+		* fixed the "/i2 intproccs remove" command, it was not working properly
+
+Version 0.0.2
+		* minor localization and typo fixes
+		* revamped some code sections (slash command handling...)
+		* added feature to include int proccs on innervate target
+
+Version 0.0.1
+		* initial release
